@@ -7,30 +7,28 @@ import { doc, getDoc } from "firebase/firestore";
 
 function ArticlePage() {
   const { article } = useParams();
-  console.log("articleID", article);
 
   const postRef = doc(db, "posts", article);
 
-  const [postData, setPostData] = useState();
+  const [articleTitle, setArticleTitle] = useState();
+  const [articleContent, setArticleContent] = useState();
 
   useEffect(
     () => {
       const getPost = async () => {
         const post = await getDoc(postRef);
-        setPostData(post.data(), doc.id);
+        setArticleTitle(post.data().title, doc.id);
+        setArticleContent(post.data().articleContent, doc.id)
       };
       getPost();
     },
     [article]
   );
 
-  console.log("POSTdata :>>>>>>>>>", postData);
-
   return (
     <div className="homePage">
-      <h1>article</h1>
-      <h1>{postData && postData.title}</h1>
-      <p>{postData && (postData.postContent || postData.content)}</p>
+      <h1>{articleTitle}</h1>
+      <div>{articleContent && articleContent}</div>
     </div>
   );
 }
