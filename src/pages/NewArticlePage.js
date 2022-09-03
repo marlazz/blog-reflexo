@@ -17,7 +17,8 @@ const NewArticlePage = ({ isAuth }) => {
       // author: { name: auth.currentUser, id: auth.currentUser},
     });
     alert('Nouvel article ajouté');
-    console.log('Nouvel article ajouté');
+    setTitle("")
+    setPostContent("")
     // to do: clear form inputs once its submited
   };
 
@@ -37,6 +38,7 @@ const NewArticlePage = ({ isAuth }) => {
           <input
             id="title"
             placeholder="Title..."
+            value={title}
             onChange={(event) => {
               setTitle(event.target.value);
             }}
@@ -47,6 +49,7 @@ const NewArticlePage = ({ isAuth }) => {
           <textarea
             id="content"
             placeholder="Post..."
+            value={postContent}
             onChange={(event) => {
               setPostContent(event.target.value);
             }}
