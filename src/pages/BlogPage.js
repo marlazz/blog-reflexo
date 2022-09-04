@@ -4,25 +4,27 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from "../firebase-config";
 
 function BlogPage() {
-  const [postLists, setPostList] = useState([]);
+  const [publishedPostList, setPublishedPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
 
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
-      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setPublishedPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })).filter((post) => (
+        post.isPublished !== false
+      )));
     };
 
     getPosts();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
-  console.log('postlist', postLists)
+  console.log('postlist', publishedPostList)
 
   return (
     <div className="homePage">
       <h1>Blog</h1>
-      {postLists.map((post, postId) => {
+      {publishedPostList.map((post, postId) => {
         return <div key={postId}>
           <h2>{post.title}</h2>
           <p>{post.content}</p>

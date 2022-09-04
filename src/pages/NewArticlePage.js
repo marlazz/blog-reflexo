@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase-config";
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
 import "../App.css";
 
-const NewArticlePage = ({ isAuth }) => {
+const NewArticlePage = ({ isOpen, handleOpen }) => {
   const [title, setTitle] = useState("");
   const [articleContent, setArticleContent] = useState("");
+  const [isPublished, setIsPublished] = useState(false);
 
+  console.log("isPublished", isPublished)
   const postsCollectionRef = collection(db, "posts");
 
   // let navigate = useNavigate();
@@ -16,14 +18,18 @@ const NewArticlePage = ({ isAuth }) => {
   const addArticleContent = (value) => {
     setArticleContent(value);
   };
+
   const createPost = async () => {
     await addDoc(postsCollectionRef, {
       title,
       articleContent,
+      isPublished,
     });
     alert("Nouvel article ajouté");
     setTitle("");
     setArticleContent("");
+    setIsPublished(false);
+    handleOpen(false)
   };
 
   const modules = {
@@ -40,29 +46,44 @@ const NewArticlePage = ({ isAuth }) => {
       ["clean"],
     ],
   };
+  useEffect(() => {
+    console.log("isPublished", isPublished)
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[isPublished]);
 
   return (
     <div>
-      <h1>Nouvel Article</h1>
-      <div>
-        <label htmlFor="title">Titre:</label>
-        <input
-          id="title"
-          placeholder="Title..."
-          value={title}
-          onChange={(event) => {
-            setTitle(event.target.value);
-          }}
-        />
-      </div>
-      <div>
-        <ReactQuill
-          theme="snow"
-          modules={modules}
-          onChange={addArticleContent}
-        />
-      </div>
-      <button onClick={createPost}> Submit Post</button>
+      {isOpen && (
+        <div>
+          <h1>Nouvel Article</h1>
+          <div>
+            <label htmlFor="title">Titre:</label>
+            <input
+              id="title"
+              placeholder="Title..."
+              value={title}
+              onChange={(event) => {
+                setTitle(event.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <ReactQuill
+              theme="snow"
+              modules={modules}
+              value={articleContent}
+              onChange={addArticleContent}
+            />
+          </div>
+          <h4>Status :</h4>
+          <input type="radio" checked={isPublished} onClick={() => setIsPublished(true)}/><label>Publier</label>
+          <input type="radio" checked={!isPublished} onClick={() => setIsPublished(false)}/><label>Enregistrer dans les brouillons</label>
+          <div>
+            <button onClick={createPost}>Valider</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

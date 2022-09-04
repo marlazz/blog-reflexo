@@ -20,6 +20,7 @@ function ArticlePage() {
         const post = await getDoc(postRef);
         setArticleTitle(post.data().title, doc.id);
         setArticleContent(post.data().articleContent, doc.id)
+        console.log(">>>>>>>>>CALL DATABASE")
       };
       getPost();
     },
