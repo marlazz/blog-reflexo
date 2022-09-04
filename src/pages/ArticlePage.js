@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { db } from "../firebase-config";
 import { useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
+import "../App.css"
 
 function ArticlePage() {
   const { article } = useParams();
@@ -28,7 +29,7 @@ function ArticlePage() {
   return (
     <div className="homePage">
       <h1>{articleTitle}</h1>
-      <div>{articleContent && articleContent}</div>
+      <div className="quill-content" dangerouslySetInnerHTML={{__html: articleContent && articleContent}}></div>
     </div>
   );
 }

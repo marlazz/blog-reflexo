@@ -4,6 +4,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase-config";
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
+import "../App.css";
 
 const NewArticlePage = ({ isAuth }) => {
   const [title, setTitle] = useState("");
@@ -27,11 +28,11 @@ const NewArticlePage = ({ isAuth }) => {
     setPostContent("");
   };
 
-  useEffect(() => {
-    if (isAuth) {
-      navigate("/login");
-    }
-  });
+  // useEffect(() => {
+  //   if (isAuth) {
+  //     navigate("/login");
+  //   }
+  // });
 
   console.log("postContent", postContent)
 
@@ -66,17 +67,6 @@ const NewArticlePage = ({ isAuth }) => {
             }}
           />
         </div>
-        {/* <div>
-          <label htmlFor="content">Article:</label>
-          <textarea
-            id="content"
-            placeholder="Post..."
-            value={postContent}
-            onChange={(event) => {
-              setPostContent(event.target.value);
-            }}
-          />
-        </div> */}
         <div>
           <ReactQuill
             theme="snow"
