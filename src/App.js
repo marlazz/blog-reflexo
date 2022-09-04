@@ -7,7 +7,7 @@ import FormationPage from "./pages/FormationPage";
 import BlogPage from "./pages/BlogPage";
 import ArticlePage from "./pages/ArticlePage";
 import NewArticlePage from "./pages/NewArticlePage";
-import Login from "./pages/Login";
+import AdminPage from './pages/AdminPage';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
         <Route path="/formation" element={<FormationPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route exact path="/blog/:article" element={<ArticlePage />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<AdminPage />} />
         <Route path="/createpost" element={<NewArticlePage />} />
       </Routes>
     </Router>

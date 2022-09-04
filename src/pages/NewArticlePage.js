@@ -1,5 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase-config";
 import "react-quill/dist/quill.snow.css";
@@ -8,16 +7,15 @@ import "../App.css";
 
 const NewArticlePage = ({ isAuth }) => {
   const [title, setTitle] = useState("");
-  const [postContent, setPostContent] = useState("");
   const [articleContent, setArticleContent] = useState("");
 
   const postsCollectionRef = collection(db, "posts");
 
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
   const addArticleContent = (value) => {
-    setArticleContent(value)
-  }
+    setArticleContent(value);
+  };
   const createPost = async () => {
     await addDoc(postsCollectionRef, {
       title,
@@ -25,16 +23,8 @@ const NewArticlePage = ({ isAuth }) => {
     });
     alert("Nouvel article ajouté");
     setTitle("");
-    setPostContent("");
+    setArticleContent("");
   };
-
-  // useEffect(() => {
-  //   if (isAuth) {
-  //     navigate("/login");
-  //   }
-  // });
-
-  console.log("postContent", postContent)
 
   const modules = {
     toolbar: [
@@ -53,29 +43,26 @@ const NewArticlePage = ({ isAuth }) => {
 
   return (
     <div>
-      <Link to="/login">Retour au tableau de bord</Link>
+      <h1>Nouvel Article</h1>
       <div>
-        <h1>Créer un nouveau post</h1>
-        <div>
-          <label htmlFor="title">Titre:</label>
-          <input
-            id="title"
-            placeholder="Title..."
-            value={title}
-            onChange={(event) => {
-              setTitle(event.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <ReactQuill
-            theme="snow"
-            modules={modules}
-            onChange={addArticleContent}
-          />
-        </div>
-        <button onClick={createPost}> Submit Post</button>
+        <label htmlFor="title">Titre:</label>
+        <input
+          id="title"
+          placeholder="Title..."
+          value={title}
+          onChange={(event) => {
+            setTitle(event.target.value);
+          }}
+        />
       </div>
+      <div>
+        <ReactQuill
+          theme="snow"
+          modules={modules}
+          onChange={addArticleContent}
+        />
+      </div>
+      <button onClick={createPost}> Submit Post</button>
     </div>
   );
 };
