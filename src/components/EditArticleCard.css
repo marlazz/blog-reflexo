@@ -1,0 +1,39 @@
+.editCard {
+    width: 350px;
+    max-height: 350px;
+    background: white;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 24px 24px 80px rgba(0,0,0,0.1);
+}
+
+.editCard__header {
+    padding: 0 1rem
+}
+
+.editCard__header--date {
+    font-style: italic;
+}
+
+.editCard__header--tag p {
+ width: fit-content;
+ padding: 4px 10px;
+ border-radius: 50px;
+ font-size: 14px;
+ color: gray;
+ font-weight: 600;
+}
+
+.editCard__image {
+    width: 100%;
+    height: 200px;
+    background: #DDDDDD;
+}
+
+.editCard__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+}

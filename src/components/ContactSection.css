@@ -1,0 +1,14 @@
+.contact-section-root {
+  padding: 2rem 15rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-title {
+  padding-bottom: 2rem;
+}
+

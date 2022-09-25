@@ -8,17 +8,12 @@ import BlogPage from "./pages/BlogPage";
 import ArticlePage from "./pages/ArticlePage";
 import NewArticlePage from "./pages/NewArticlePage";
 import AdminPage from './pages/AdminPage';
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <Router>
-      <nav>
-        <Link to="/"> Home </Link>
-        <Link to="/reflexologie"> Reflexologie </Link>
-        <Link to="/coaching"> Coaching </Link>
-        <Link to="/formation"> Formation </Link>
-        <Link to="/blog"> Blog </Link>
-      </nav>
+    <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/reflexologie" element={<ReflexoPage />} />

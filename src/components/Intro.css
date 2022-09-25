@@ -1,0 +1,13 @@
+.intro-root {
+  padding: 2rem 15rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-container {
+  width: 50%;
+  font-size: 16px;
+}
+
+.section-title {
+  padding-bottom: 2rem;
+}

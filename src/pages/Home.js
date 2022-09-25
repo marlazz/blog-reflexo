@@ -1,9 +1,17 @@
+import ContactSection from "../components/ContactSection";
+import Hero from "../components/Hero";
+import Intro from "../components/Intro";
+import Partners from "../components/Partners";
+import Practices from "../components/Practices";
 
 function Home() {
-
   return (
     <div className="homePage">
-    <h1>HomePage</h1>
+      <Hero />
+      <Intro />
+      <Practices />
+      <Partners />
+      <ContactSection />
     </div>
   );
 }

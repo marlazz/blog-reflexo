@@ -1,0 +1,13 @@
+.contactInfos-root {
+
+}
+
+.phone-button {
+    height: 3rem;
+    padding: 0 3rem;
+    border-radius: 30px;
+    color: white;
+    font-size: 20px;
+    background-color: #193c3c;
+
+}
