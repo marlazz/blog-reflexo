@@ -1,0 +1,49 @@
+.subHeader {
+  display: flex;
+  justify-content: center;
+  margin-top: -3rem;
+  font-family: Poppins;
+}
+
+.subHeader-container {
+  display: flex;
+  width: 80%;
+  background: #4DBECA;
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+.subHeader-container-col {
+  width: 25%;
+}
+
+.subHeader-container-heading {
+  display: flex;
+  background: #4FD9E6;
+  padding: 25px;
+}
+
+.subHeader-title {
+  color: white;
+  padding-left: 1.5rem;
+  font-weight: 500;
+  font-size: 22px;
+}
+ 
+.subHeader-container-content {
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #4DBECA;
+  margin-top: -1rem;
+  padding: 10px 43px 43px;
+  font-size: 20px;
+  line-height: 28px;
+  line-height: 140%;
+  color: white;
+} 
+
+.subHeader-link {
+  color: white;
+}

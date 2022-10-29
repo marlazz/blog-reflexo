@@ -1,0 +1,39 @@
+.articleCard {
+    width: 27%;
+    /* height: 20rem; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 24px;
+    color: grey;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 65px;
+    background: blue;
+    text-overflow: ellipsis;
+}
+
+.card-button {
+    width: 10rem;
+    margin: 0 50%;
+    padding: 0.5rem 2rem;
+    color: white;
+    font-size: 16px;
+    background: green;
+    border: solid 1px white; 
+    text-decoration: none;
+    text-align: center
+}

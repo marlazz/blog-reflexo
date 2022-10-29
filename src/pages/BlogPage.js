@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../firebase-config";
+import ArticleCard from '../components/ArticleCard';
 
 function BlogPage() {
   const [publishedPostList, setPublishedPostList] = useState([]);
@@ -22,15 +22,13 @@ function BlogPage() {
   console.log('postlist', publishedPostList)
 
   return (
-    <div className="homePage">
+    <div className="homePage" >
       <h1>Blog</h1>
+      <div className="article-container">
       {publishedPostList.map((post, postId) => {
-        return <div key={postId}>
-          <h2>{post.title}</h2>
-          <p>{post.content}</p>
-          <NavLink to={`/blog/${post.id}`}>Lire l'article</NavLink>
-        </div>;
+        return <ArticleCard key={postId} title={post.title} text={post.articleContent} id={post.id} />
       })}
+      </div>
     </div>
   );
 }

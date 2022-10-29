@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import LOGOWHITEBG from "../assets/a.svg";
+import LOGO from "../assets/logo_small.svg";
 import "./Navbar.css";
 
 const Navbar = () => {
   return (
     <div className="navbar">
       <Link className="navbar__home" to="/">
-        <img className="logo" src={LOGOWHITEBG} alt="logo colibri" />
-        <p>Leila El Ghanane, Réflexothérapeute</p>
+        <img className="logo" src={LOGO} alt="logo colibri" />
+        <p>RÉFLEXOTHÉRAPIE, Carcassonne Et Occitanie</p>
       </Link>
       <nav className="navbar__menu">
         <Link className="navbar__menu--item" to="/reflexologie">
@@ -20,7 +20,7 @@ const Navbar = () => {
         </Link>
         <Link className="navbar__menu--item" to="/formation">
           {" "}
-          Formation{" "}
+          Formations{" "}
         </Link>
         <Link className="navbar__menu--item" to="/blog">
           {" "}

@@ -1,17 +1,20 @@
 import ContactSection from "../components/ContactSection";
 import Hero from "../components/Hero";
+import SubHeader from "../components/SubHeader";
 import Intro from "../components/Intro";
+import LastPublications from "../components/LastPublications";
 import Partners from "../components/Partners";
-import Practices from "../components/Practices";
+import "./Home.css";
 
 function Home() {
   return (
     <div className="homePage">
       <Hero />
+      <SubHeader />
       <Intro />
-      <Practices />
-      <Partners />
+      <LastPublications />
       <ContactSection />
+      <Partners />
     </div>
   );
 }

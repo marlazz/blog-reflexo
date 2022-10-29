@@ -3,21 +3,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: #555b6eff; */
+    font-family: 'Poppins', sans-serif;
+
+    /* background-color: #ADE1E7; */
 }
 
 .logo {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
 }
 .navbar__home {
     padding: 2rem;
     display: flex;
     align-items: center;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-style: italic;
+    font-size: 28px;
     color: #193C3C;
 }
 
@@ -26,12 +27,16 @@
 }
 
 .navbar__menu--item {
-    padding: 0 3rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-transform: uppercase;
+    padding: 0 1.5rem;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
     color: #193C3C;
+}
+
+.navbar__menu--item:hover {
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: #4AB7C2
 }
