@@ -1,20 +1,26 @@
-import ContactSection from "../components/ContactSection";
 import Hero from "../components/Hero";
-import SubHeader from "../components/SubHeader";
-import Intro from "../components/Intro";
-import LastPublications from "../components/LastPublications";
-import Partners from "../components/Partners";
 import "./Home.css";
+import Footer from "../components/Footer";
+import Practices from "../components/sections/pratices/Pratices";
+import About from "../components/sections/about/About";
+import Warning from "../components/sections/warning/warning";
+import Partners from "../components/sections/partners/Partners";
+import LastPublications from "../components/sections/last-publications/LastPublications";
+import ContactSection from "../components/sections/contact/ContactSection";
+import Navbar from "../components/Navbar";
 
 function Home() {
   return (
     <div className="homePage">
+      <Navbar />
       <Hero />
-      <SubHeader />
-      <Intro />
+      <Practices />
+      <About />
+      <Warning />
+      <Partners />
       <LastPublications />
       <ContactSection />
-      <Partners />
+      <Footer />
     </div>
   );
 }

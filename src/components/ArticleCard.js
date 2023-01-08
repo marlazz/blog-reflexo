@@ -1,18 +1,20 @@
 import { NavLink } from "react-router-dom";
 import "./ArticleCard.css";
 
-const ArticleCard = ({ title, text, id }) => {
+const ArticleCard = ({ article }) => {
   return (
-    <div
-      className="articleCard"
-      
-      // style={{
-      //   backgroundImage: `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(${cardData.picture})`,
-      // }}
-    >
-      <h3 className="card-title">{title}</h3>
-      <p className="card-text" dangerouslySetInnerHTML={{__html: text && text}} ></p>
-      <NavLink to={`/blog/${id}`} className="card-button">Lire l'article</NavLink>
+    <div className="articleCard">
+    <div style={{ backgroundImage: `url(${article.picture})` }} className="articleCard-picture"/>
+      <div className="articleCard-text">
+        <h3 className="card-title">{article.title}</h3>
+        <p>
+          publié le 11/11/2022, <br />
+          par Leila Elghanane
+        </p>
+        <div className="articleCard-bottom-container">
+            <NavLink to={`/blog/${article.id}`}>Lire l'article</NavLink>
+        </div>
+      </div>
     </div>
   );
 };

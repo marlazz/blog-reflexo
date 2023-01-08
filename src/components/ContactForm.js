@@ -1,23 +1,21 @@
 import "./ContactForm.css";
+import CTAButton from "./ui-kit/CTAButton";
 
 const ContactForm = () => {
   return (
-    <div className="form-root">
-      <div className="form-header">
-        <p className="form-intro">
-            Vous avez des questions ? Vous souhaitez prendre rendez-vous? Ecrivez moi et je répondrais le plus rapidemant possible
-        </p>
-      </div>
-      <form>
-        <label className="form-label">Votre nom</label>
-        <input type="text" name="name" />
-        <label className="form-label">Votre mail</label>
-        <input type="email" name="email" />        
-        <label className="form-label">Votre numéro de téléphone</label>
-        <input type="text" name="phone" />
-        <label className="form-label">Votre message</label>
-        <textarea></textarea>
-        <button className="form-button">Envoyer</button>
+    <div className="contact-form-root">
+      <form className="contact-form">
+        <label className="contact-label">Votre nom</label>
+        <input type="text" name="name" className="contact-input" />
+        <label className="contact-label">Votre mail</label>
+        <input type="email" name="email" className="contact-input" />
+        <label className="contact-label">Votre numéro de téléphone</label>
+        <input type="text" name="phone" className="contact-input" />
+        <label className="contact-label">Votre message</label>
+        <textarea className="contact-textarea"></textarea>
+        <div className="contact-form-button-section">
+          <CTAButton type="submit">Envoyer</CTAButton>
+        </div>
       </form>
     </div>
   );

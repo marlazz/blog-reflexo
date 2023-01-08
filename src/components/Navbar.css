@@ -3,9 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Poppins', sans-serif;
-
-    /* background-color: #ADE1E7; */
+    width: 100%
 }
 
 .logo {
@@ -18,8 +16,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    font-size: 28px;
-    color: #193C3C;
+    color: black;
 }
 
 .navbar__menu {
@@ -30,13 +27,13 @@
     padding: 0 1.5rem;
     font-size: 20px;
     line-height: 30px;
-    font-weight: 400;
+    font-weight: 500;
     text-decoration: none;
-    color: #193C3C;
+    color: black;
 }
 
 .navbar__menu--item:hover {
     text-decoration: underline;
     text-underline-offset: 1rem;
-    text-decoration-color: #4AB7C2
+    text-decoration-color: #c68439;
 }

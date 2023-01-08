@@ -1,0 +1,16 @@
+ .pratices-container {
+    padding: 0rem 20% 12rem 20%;
+    background: #80b6b0;
+}
+
+.practices-title {
+    font-size: 36px;
+    /* color: white; */
+    font-family: Poppins;
+}
+
+.activities-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}

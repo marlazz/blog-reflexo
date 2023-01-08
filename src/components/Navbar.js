@@ -24,7 +24,7 @@ const Navbar = () => {
         </Link>
         <Link className="navbar__menu--item" to="/blog">
           {" "}
-          Blog{" "}
+          Actualités{" "}
         </Link>
       </nav>
     </div>

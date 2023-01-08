@@ -1,0 +1,14 @@
+.footer {
+    /* height: 400px; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-sm-container {
+}
+
+.social-media-icon {
+    margin: 1rem;
+    width: 3rem
+}

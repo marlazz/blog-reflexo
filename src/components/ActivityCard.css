@@ -1,0 +1,77 @@
+.activity-card {
+  width: 48%;
+  display: flex;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  height: auto;
+  margin: 1rem 0;
+  background: #f4f3f0;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: Poppins
+}
+
+.activity-card:first-of-type {
+  width: 100%;
+
+}
+
+.activity-image {
+  background-image: url("../assets/activities/reflexo/reflexology.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  min-width: 10rem;
+}
+
+.activity-image:first-of-type {
+  width: 60%;
+}
+
+.activity-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 70%;
+  padding: 1.5rem 5%;
+}
+
+
+
+.activity-features-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 10rem;
+  flex-wrap: wrap;
+}
+
+.activity-features-container:first-child {
+}
+
+.activity-feature {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 5rem;
+}
+
+.feature-icon {
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.activity-buttons-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 2rem 0;
+  position: relative;
+  bottom: 0
+}
+
+.activity-link {
+  text-decoration: none;
+  color: white
+}
+
+

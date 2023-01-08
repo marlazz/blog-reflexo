@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../firebase-config";
 import ArticleCard from '../components/ArticleCard';
+import './BlogPage.css';
 
 function BlogPage() {
   const [publishedPostList, setPublishedPostList] = useState([]);
@@ -14,7 +15,6 @@ function BlogPage() {
         post.isPublished !== false
       )));
     };
-
     getPosts();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
@@ -22,11 +22,11 @@ function BlogPage() {
   console.log('postlist', publishedPostList)
 
   return (
-    <div className="homePage" >
+    <div className="blog-page" >
       <h1>Blog</h1>
-      <div className="article-container">
+      <div className="blog-articles">
       {publishedPostList.map((post, postId) => {
-        return <ArticleCard key={postId} title={post.title} text={post.articleContent} id={post.id} />
+        return <ArticleCard key={postId} article={post} id={post.id} />
       })}
       </div>
     </div>

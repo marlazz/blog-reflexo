@@ -1,21 +1,19 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { auth, provider } from "../firebase-config";
-import { signInWithPopup, signOut } from "firebase/auth";
+import { auth, provider } from "../../firebase-config";
 import { getDocs, collection } from "firebase/firestore";
-import { db } from "../firebase-config";
+import { db } from "../../firebase-config";
+import { signInWithPopup, signOut } from "firebase/auth";
+import NewArticlePage from "../NewArticlePage";
+import EditCard from "../../components/EditArticleCard";
 
-import NewArticlePage from "./NewArticlePage";
-
-import "./AdminPage.css";
-import EditCard from "../components/EditArticleCard";
-
-const AdminPage = () => {
+const AllArticlesPage = () => {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+
   const [isCreatingNewArticle, setIsCreatingNewArticle] = useState(false);
   const [allPostList, setAllPostList] = useState([]);
   const [allArticleVisible, setAllArticleVisible] = useState(false);
-  const [lastPusblished, setLastPublished] = useState([])
+  const [lastPusblished, setLastPublished] = useState([]);
   const postsCollectionRef = collection(db, "posts");
 
   useEffect(() => {
@@ -23,7 +21,9 @@ const AdminPage = () => {
       const data = await getDocs(postsCollectionRef);
       setAllPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       console.log(">>>>>>>>>CALL DATABASE");
-      setLastPublished(allPostList.slice(allPostList.length -3, allPostList.length))
+      setLastPublished(
+        allPostList.slice(allPostList.length - 3, allPostList.length)
+      );
     };
     getPosts();
   }, []);
@@ -43,33 +43,17 @@ const AdminPage = () => {
     });
   };
 
-  return (
-    <div className="adminPage">
-      <div className="admin__sidebar">
-        <h3 className="admin__greeting">Bonjour Leila</h3>
-        {isAuth && (
-          <div className="admin__sidebar--btns">
-            {!isCreatingNewArticle && (
-              <button
-                className="btn--cta"
-                onClick={() => setIsCreatingNewArticle(true)}
-              >
-                Ajouter un nouvel article
-              </button>
-            )}
-            <button className="sidebar__btn">Brouillons</button>
-            <button
-              className="sidebar__btn"
-              onClick={() => setAllArticleVisible(true)}
-            >
-              {allArticleVisible
-                ? "Cacher tous les articles"
-                : "Voir tous les articles"}
-            </button>
-          </div>
-        )}
-      </div>
 
+  return (
+    <div>
+      <div className="admin__sidebar">
+        <nav>
+          <Link to="/createpost">
+            <button>+ écrire un article</button>
+          </Link>
+          <button>Tous les articles</button>
+        </nav>
+      </div>
       <div className="admin__content">
         <div className="content__header">
           <h1 className="content__title">Tableau de bord</h1>
@@ -90,7 +74,6 @@ const AdminPage = () => {
             </form>
           </section>
           <section className="content__edito--section">
-
             {isAuth && isCreatingNewArticle && (
               <NewArticlePage
                 isOpen={isCreatingNewArticle}
@@ -101,7 +84,6 @@ const AdminPage = () => {
 
           <h2>Dernières publications</h2>
           <section className="content__edito--section-cards">
-
             {isAuth &&
               allPostList.map((post, postId) => (
                 <EditCard key={postId} article={post} />
@@ -109,8 +91,9 @@ const AdminPage = () => {
           </section>
         </div>
       </div>
+
     </div>
   );
 };
 
-export default AdminPage;
+export default AllArticlesPage;

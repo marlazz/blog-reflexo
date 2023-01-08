@@ -1,0 +1,13 @@
+.blog-page {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.blog-articles {
+    width: 70%;
+    padding: 0 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

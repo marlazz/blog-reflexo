@@ -1,0 +1,8 @@
+.partners-section {
+  padding: 0 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+}

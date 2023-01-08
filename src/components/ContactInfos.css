@@ -1,24 +1,9 @@
 .contactInfos-root {
-    width: 50%;
-    text-align: center;
-    padding: 3rem 1rem;
-}
-
-.phone-button {
-    max-width: 16rem;
-    height: 3rem;
-    padding: 0 3rem;
-    border-radius: 30px;
-    color: white;
-    font-size: 20px;
-    background-color: #193c3c;
-}
-
-.horaires {
-    padding: 2rem 0;
-}
-
-.adress {
-    font-style: italic;
-    padding-top: 2rem;
+  width: 50%;
+  text-align: center;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }

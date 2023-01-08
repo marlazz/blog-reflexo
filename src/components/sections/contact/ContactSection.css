@@ -1,0 +1,33 @@
+
+.contact-section-root {
+  width: 100%;
+  padding: 6rem 20%;
+  font-family: Poppins;
+}
+
+.contact-container {
+  /* background-color: #f4f3f0; */
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+  border-radius: 10px;
+
+}
+
+.contact-form-infos-container {
+  /* height: min-content; */
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.contact-title {
+    font-size: 36px;
+    /* color: white; */
+    font-family: Poppins;
+    padding-bottom: 2rem
+}
+
+
+.google-map {
+  width: 100%;
+}

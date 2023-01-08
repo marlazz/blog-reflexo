@@ -1,0 +1,19 @@
+.last-publications {
+  padding: 8rem 20%;
+}
+
+.last-publications-title {
+  font-size: 36px;
+  /* color: white; */
+  font-family: Poppins;
+}
+
+.last-publications-intro {
+  margin: 3rem 0;
+}
+
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

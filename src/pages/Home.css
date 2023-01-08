@@ -3,4 +3,7 @@
     padding: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    /* background-image: linear-gradient(to right top, #0c3b44, #29585e, #447679, #619594, #80b6b0); */
 }
+

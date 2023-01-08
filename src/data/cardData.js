@@ -1,6 +1,6 @@
-import LIBRAIRY from "../assets/librairy.jpg";
-import GIRLS from "../assets/girls.jpg";
-import COLIBRI from "../assets/colibri.jpg";
+import LIBRAIRY from "../assets/blog/librairy.jpg";
+import GIRLS from "../assets/blog/girls.jpg";
+import COLIBRI from "../assets/blog/colibri.jpg";
 
 const cardsData = [
     {
@@ -15,7 +15,7 @@ const cardsData = [
         title: "Evenement à Carcasonne: soutien aux femmes victimes de violence",
         picture: GIRLS,
         text: "Discover the planets of the solar system and their main properties",
-        tag: "vie associative",
+        tag: "associations",
         link: "/blog",
         createdAt: "18 septembre 2022",
       },

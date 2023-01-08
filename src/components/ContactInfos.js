@@ -1,13 +1,18 @@
 import "./ContactInfos.css";
-import GoogleMap from "./Map";
+import CTAButton from "./ui-kit/CTAButton";
 
 const ContactInfos = () => {
   return (
     <div className="contactInfos-root">
-      <button className="phone-button">06.26.54.22.58</button>
-      <p className="horaires">Horaires: du lundi au vendredi, de 9h à 18h</p>
-      <GoogleMap />
-      <quote className="adress">15 rue d la république, 11050 Cidrefac</quote>
+        <p>
+          Vous pouvez prendre rendez-vous par téléphone ou email. N'hésitez pas
+          à me contacter pour toutes demande de devis ou demande d'informations,
+          je vous réponrdrais au plus vite!
+        </p>
+        <CTAButton>06.26.54.22.58</CTAButton>
+        <p>Horaires: du lundi au vendredi, de 9h à 18h</p>
+        <p>email: leilaelghanane@gmail.com</p>
+        <p>15 rue d la république, 11050 Cidrefac</p>
     </div>
   );
 };

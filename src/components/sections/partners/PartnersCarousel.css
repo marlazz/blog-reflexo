@@ -1,0 +1,14 @@
+.partners-carousel {
+    width: 100%;
+    margin: 5rem 0;
+}
+
+.logo-container {
+    width: fit-content;
+    padding: 0 1rem;
+}
+
+.partner-logo {
+    max-width: 20rem;
+    max-height: 6rem;
+  }

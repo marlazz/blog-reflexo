@@ -8,19 +8,22 @@ const data = [
     icon: RDV,
     title: "Rendez-vous",
     content: "Vous pouvez prendre rendez-vous par téléphone ou email.",
-    link: "Infos contact",
+    linkText: "Infos contact",
+    href: '#contact'
   },
   {
     icon: LOCATION,
     title: "Adresse",
     content: "Vous pouvez prendre rendez-vous par téléphone ou email.",
-    link: "Voir sur la carte",
+    linkText: "Voir sur la carte",
+    href: "#contact"
   },
   {
     icon: PHONE,
     title: "Contact",
     content: "Vous pouvez prendre rVous pouvez prendre rendez-vous par téléphone Vous",
-    link: "Infos contact",
+    linkText: "Infos contact",
+    href: "#contact"
   },
   {
     icon: CLOCK,
